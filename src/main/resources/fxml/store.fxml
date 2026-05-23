@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.store.app.controllers.StoreController"
+            prefHeight="600" prefWidth="1000">
+
+    <!-- Верхняя панель (Header) -->
+    <top>
+        <VBox styleClass="header">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text="xPlay Store" styleClass="title-label" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+                <TextField fx:id="searchField" promptText="Поиск игр..." prefWidth="300"/>
+
+                <ComboBox fx:id="categoryComboBox" prefWidth="140"/>
+                <ComboBox fx:id="sortComboBox" prefWidth="160"/>
+
+                <HBox spacing="8" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <Button text="Библиотека" onAction="#openLibrary" styleClass="nav-button"/>
+                    <Button text="Профиль" onAction="#openProfile" styleClass="nav-button"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Основная область с товарами -->
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <FlowPane fx:id="gamesContainer"
+                      hgap="20"
+                      vgap="20"
+                      alignment="CENTER"
+                      styleClass="games-container">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </FlowPane>
+        </ScrollPane>
+    </center>
+
+    <!-- Нижняя панель (опционально) -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="bottom-bar" spacing="10">
+            <padding>
+                <Insets top="8" bottom="8"/>
+            </padding>
+            <Button text="Обновить список" onAction="#showAllProducts"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

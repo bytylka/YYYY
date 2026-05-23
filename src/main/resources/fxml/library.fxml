@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="0" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.store.app.controllers.LibraryController"
+      style="-fx-background-color: #1e1e2e; -fx-pref-width: 950; -fx-pref-height: 680;">
+
+    <!-- Верхняя панель -->
+    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #181825; -fx-padding: 15 25;">
+        <Label text="STORE" style="-fx-text-fill: #cba6f7; -fx-font-size: 32px; -fx-font-weight: bold;"/>
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button text="Магазин" onAction="#goToStore"
+                style="-fx-background-color: transparent; -fx-border-color: #89b4fa; -fx-text-fill: #89b4fa; -fx-font-weight: bold;"/>
+
+        <Button text="Библиотека" style="-fx-background-color: #89b4fa; -fx-text-fill: white; -fx-font-weight: bold;" disable="true"/>
+
+        <Button text="Профиль" onAction="#goToProfile"
+                style="-fx-background-color: transparent; -fx-border-color: #89b4fa; -fx-text-fill: #89b4fa; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <Label text="Моя библиотека" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 25 30 15 30;"/>
+
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+        <FlowPane fx:id="libraryContainer" hgap="25" vgap="25"
+                  style="-fx-padding: 30;">
+        </FlowPane>
+    </ScrollPane>
+</VBox>

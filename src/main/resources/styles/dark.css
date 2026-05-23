@@ -1,0 +1,56 @@
+/* dark.css - Полная тёмная тема */
+
+.root {
+    -fx-background-color: #1e1e2e;
+    -fx-base: #1e1e2e;
+}
+
+.scene, VBox, HBox, FlowPane, ScrollPane {
+    -fx-background-color: #1e1e2e;
+}
+
+/* Карточки */
+.game-card {
+    -fx-background-color: #313244;
+    -fx-background-radius: 12;
+    -fx-padding: 16;
+    -fx-min-width: 185;
+    -fx-min-height: 110;
+    -fx-cursor: hand;
+}
+
+.game-card:hover {
+    -fx-background-color: #45475a;
+    -fx-scale: 1.04;
+}
+
+/* Текст */
+.label {
+    -fx-text-fill: white !important;
+}
+
+.text-field {
+    -fx-background-color: #252525;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+/* Кнопки */
+.button {
+    -fx-background-radius: 6;
+}
+
+/* Специально для описания в productDetail */
+TextArea {
+    -fx-background-color: #252525;
+    -fx-text-fill: white;
+}
+.combo-box {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: white;
+}
+
+.nav-button {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+}

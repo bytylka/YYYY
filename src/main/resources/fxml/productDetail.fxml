@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.store.app.controllers.ProductDetailController"
+      style="-fx-background-color: #1e1e2e; -fx-padding: 25;">
+
+    <Label fx:id="titleLabel" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+    <Label fx:id="priceLabel" style="-fx-font-size: 20px; -fx-text-fill: #a6e3a1;"/>
+
+    <Label text="Описание:" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+    <TextArea fx:id="descriptionArea" editable="false" prefRowCount="8"
+              style="-fx-background-color: #252525; -fx-text-fill: white;"/>
+
+    <HBox spacing="15">
+        <Button text="Купить" fx:id="buyButton" onAction="#handleBuy"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px;"/>
+        <Button text="Назад в магазин" onAction="#goBackToStore"
+                style="-fx-background-color: #89b4fa; -fx-text-fill: white; -fx-font-size: 14px;"/>
+    </HBox>
+
+    <Label text="Отзывы" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <ScrollPane fitToWidth="true" prefHeight="180">
+        <VBox fx:id="reviewsContainer" spacing="12"/>
+    </ScrollPane>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <ComboBox fx:id="ratingBox" promptText="Рейтинг 1-5"/>
+        <TextField fx:id="commentField" promptText="Напишите отзыв..." HBox.hgrow="ALWAYS"/>
+        <Button text="Отправить отзыв" onAction="#handleAddReview"
+                style="-fx-background-color: #89b4fa; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
